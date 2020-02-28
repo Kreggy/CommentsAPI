@@ -12,8 +12,6 @@ export class RegisterComponent implements OnInit {
 
   public username = '';
   public password = '';
-  public checkpassword = '';
-  public email = '';
   private registerURL = 'http://85.160.64.233:3000/session/register';
 
 
@@ -22,13 +20,11 @@ export class RegisterComponent implements OnInit {
 
 
   clickedButton() {
-    if (this.checkpassword === this.password) {
+    
 
       this.httpClient.post(this.registerURL, {
         username: this.username,
-        email: this.email,
         password: this.password,
-        checkpassword: this.checkpassword,
 
       }).subscribe(
         (data: any) => {
@@ -36,7 +32,7 @@ export class RegisterComponent implements OnInit {
         }, (error) => {
         }
       );
-    }
+    
   }
 
   ngOnInit() {
