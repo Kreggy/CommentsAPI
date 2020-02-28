@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class UserinfoComponent implements OnInit {
 
   public username = '';
-  public password = '';
+  public email = '';
   private getInfoURL = 'http://85.160.64.233:3000/user';
 
   constructor(private httpClient: HttpClient, private router: Router) {

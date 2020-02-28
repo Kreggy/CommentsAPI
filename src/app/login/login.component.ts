@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import Access from '../Access';
 
 @Component({
@@ -11,7 +11,7 @@ import Access from '../Access';
 export class LoginComponent implements OnInit {
 
   public password = '';
-  public username = '';
+  public email = '';
   private loginURL = 'http://85.160.64.233:3000/session/login';
 
   constructor(private httpClient: HttpClient, private router: Router) {
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   clickedButton() {
     this.httpClient.post(this.loginURL, {
-      username: this.username,
+      email: this.email,
       password: this.password,
     }).subscribe(
       (data: any) => {

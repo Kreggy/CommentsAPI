@@ -12,6 +12,8 @@ export class RegisterComponent implements OnInit {
 
   public username = '';
   public password = '';
+  private checkpassword = '';
+  private email = '';
   private registerURL = 'http://85.160.64.233:3000/session/register';
 
 
@@ -25,6 +27,8 @@ export class RegisterComponent implements OnInit {
       this.httpClient.post(this.registerURL, {
         username: this.username,
         password: this.password,
+        checkpassword: this.checkpassword,
+        email: this.email,
 
       }).subscribe(
         (data: any) => {
