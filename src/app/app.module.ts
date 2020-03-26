@@ -3,31 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { LoggedinComponent } from './loggedin/loggedin.component';
-import { HomeComponent } from './home/home.component';
-import { UserinfoComponent } from './userinfo/userinfo.component';
-
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
+import { UsersComponent } from './pages/users/users.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     LoginComponent,
-    LoggedinComponent,
+    RegisterComponent,
     HomeComponent,
-    UserinfoComponent
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    FormsModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
